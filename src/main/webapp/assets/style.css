@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Ownglyph_ParkDaHyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, input {
+    font-family: Ownglyph_ParkDaHyun, sans-serif;
+    color: #815854;
+    background-color: #F9EBDE;
+}
+
+#description {
+    border-radius: 12px; /* 둥근 모서리 */
+    padding: 10px; /* 내부 여백 */
+    border: 1px solid #ccc; /* 테두리 색상 */
+    outline: none; /* 포커스 테두리 제거 */
+    transition: all 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+
+#description:focus {
+    border-color: #F9EBDE; /* 포커스 시 테두리 색 변경 */
+    box-shadow: 0 0 5px #815854; /* 포커스 시 그림자 효과 */
+}
+
+
+button {
+    font-family: Ownglyph_ParkDaHyun, sans-serif;
+    color: #F9EBDE;
+    background-color: #815854;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 2px;
+}
+
+main {
+    margin: auto;
+    max-width: 576px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+section > form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+section > form * {
+    width: 100%;
+}
+
+section > form input {
+    padding: 4px;
+}
+
+figure > img {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 이미지 자체 크기만큼 이동하여 완벽한 중앙 정렬 */
+    width: 100%;
+    height: auto; /* 이미지 높이는 자동으로 조절 */
+}
+
+figure {
+    width: 100%;
+    /*padding: 2rem;*/
+    margin: 1rem 0;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px
+}
+
+section > form button {
+    padding: 6px;
+    width: 240px;
+}
