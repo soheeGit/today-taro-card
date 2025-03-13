@@ -17,7 +17,7 @@ public class SupabaseServiceImpl implements SupabaseService {
     }
 
     @Override
-    public String findById(String uuid) throws IOException, InterruptedException {
+    public String[] findById(String uuid) throws IOException, InterruptedException {
         return supabaseRepository.findById(uuid);
     }
 }

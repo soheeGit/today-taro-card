@@ -91,3 +91,13 @@ section > form button {
     padding: 6px;
     width: 240px;
 }
+
+img.tarot-card {
+    width: 220px; /* 가로 크기 */
+    height: 380px; /* 타로카드 비율 (2.75:4.75에 근접) */
+    object-fit: cover; /* 이미지가 비율에 맞게 잘리면서 채워짐 */
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px; /* 모서리를 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 카드 느낌을 위한 그림자 효과 */
+}

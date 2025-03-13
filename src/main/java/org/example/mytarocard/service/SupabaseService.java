@@ -11,5 +11,5 @@ public interface SupabaseService {
     void save(String id, String text, String image) throws IOException, InterruptedException;
     Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 
-    String findById(String uuid) throws IOException, InterruptedException;
+    String[] findById(String uuid) throws IOException, InterruptedException;
 }
