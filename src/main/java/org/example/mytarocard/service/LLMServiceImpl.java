@@ -34,7 +34,7 @@ public class LLMServiceImpl implements LLMService{
     public LLMServiceResponse callAPITogether(LLMServiceParam param) throws IOException, InterruptedException {
         logger.info("callAPITogether");
         String prompt = """
-                %s 이 글에서 상징과 해석, 극복을 보고 그에 맞는 타로 카드 이미지를 예쁘게 뽑아줘
+                %s 이 글에서 나오는 단어들중에, 핵심이 되는 단어들를 바탕으로 몽롱한 느낌의 이미지 뽑아줘
                 """.formatted(param.prompt());
 
         return new LLMServiceResponse(llmRepository.callModel(param.model(), prompt));

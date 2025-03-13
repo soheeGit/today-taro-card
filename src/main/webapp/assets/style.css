@@ -92,12 +92,24 @@ section > form button {
     width: 240px;
 }
 
-img.tarot-card {
-    width: 220px; /* 가로 크기 */
-    height: 380px; /* 타로카드 비율 (2.75:4.75에 근접) */
-    object-fit: cover; /* 이미지가 비율에 맞게 잘리면서 채워짐 */
+.taro-card-container {
+    perspective: 1000px; /* 3D 효과를 위한 원근감 */
+    margin: 30px auto;
+}
+
+.taro-card {
+    width: 180px; /* 더 작은 너비로 설정 */
+    height: 300px; /* 타로카드 비율에 맞게 조정 */
+    object-fit: cover; /* 이미지가 컨테이너를 채우도록 설정 */
+    max-width: 100%; /* 부모 요소보다 크지 않도록 제한 */
+    max-height: 300px; /* 최대 높이 제한 */
     display: block;
     margin: 20px auto;
-    border-radius: 10px; /* 모서리를 둥글게 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 카드 느낌을 위한 그림자 효과 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.taro-card:hover {
+    transform: rotateY(5deg); /* 마우스 오버시 약간 회전 */
+    box-shadow: 5px 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 방향 변경 */
 }
