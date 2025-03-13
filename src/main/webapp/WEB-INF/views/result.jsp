@@ -17,6 +17,7 @@
         <section>
 <%--            <p><%= request.getAttribute("uuid")%></p>--%>
             <p><%= request.getAttribute("data")%></p>
+            <img src="<%= request.getAttribute("result") %>" alt="타로 카드 이미지">
             <button onclick="location.href = '<%= request.getContextPath()%>'">다시 하기</button>
         </section>
     </main>

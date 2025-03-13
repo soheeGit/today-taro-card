@@ -22,7 +22,7 @@
                 <label for="description">
                     ⌨️ 설명 입력
                 </label>
-                <input id="description" type="text" name="description" placeholder="당신에 대한 설명을 적어주세요!" required>
+                <input id="description" type="text" name="description" placeholder="당신의 오늘 기분을 적어주세요!(ex 행복함, 우울함)" required>
                 <button>결과 보기</button>
             </form>
         </section>

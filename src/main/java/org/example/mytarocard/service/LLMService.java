@@ -8,5 +8,6 @@ import java.io.IOException;
 
 public interface LLMService {
     LLMServiceResponse callAPI(LLMServiceParam param) throws IOException, InterruptedException;
+    LLMServiceResponse callAPITogether(LLMServiceParam param) throws IOException, InterruptedException;
     Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 }

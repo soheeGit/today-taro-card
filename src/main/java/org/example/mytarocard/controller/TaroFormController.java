@@ -42,16 +42,15 @@ public class TaroFormController extends Controller{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log("TaroFormController doPost");
         String description = req.getParameter("description");
-        LLMServiceParam param = new LLMServiceParam(LLMModel.GEMINI_2_0_FLASH, description);
-        LLMServiceResponse llmServiceResponse = null;
         String uuid = UUID.randomUUID().toString();
-
         try {
-            llmServiceResponse = llmservice.callAPI(param);
-//            System.out.println(llmServiceResponse);
-//            System.out.println(llmServiceResponse.data());
+            LLMServiceParam geminiParam = new LLMServiceParam(LLMModel.GEMINI_2_0_FLASH, description);
+            LLMServiceResponse llmServiceResponse = llmservice.callAPI(geminiParam);
             log(llmServiceResponse.data());
-            supabaseService.save(uuid, llmServiceResponse.data(), "");
+            LLMServiceParam togetherParam = new LLMServiceParam(LLMModel.TOGETHER_SCHNELL, llmServiceResponse.data());
+            LLMServiceResponse togetherResponse = llmservice.callAPITogether(togetherParam);
+            System.out.println(togetherResponse.data());
+            supabaseService.save(uuid, llmServiceResponse.data(), togetherResponse.data());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
